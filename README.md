@@ -1,4 +1,3 @@
-PittendrighPavlidisModel_3-oscillators
 This repository contains an implemention of the Pittendrigh-Pavlidis model of 3 coupled oscillators.
 
 ## Introduction
@@ -7,25 +6,23 @@ They were later adpated to model two oscillators with mutual coupling, to unders
 The present code adapts the Java implementation into the programming language R and adds a third oscillator, to simulate the interaction between evening-morning oscillators and the Food-Entrainable Oscillator (FEO) in rodents.
 
 ## Model equations
-Equações do oscilador evening (e)
+Evening oscilador (e)
 
-dR<sub>e</sub>/dt = R<sub>e</sub> – c<sub>e</sub>S<sub>e</sub> – b<sub>e</sub>S<sub>e</sub>2 + (d<sub>e</sub> – L<sub>e</sub>) + K<sub>e</sub>
+dR<sub>e</sub>/dt = R<sub>e</sub> – c<sub>e</sub>S<sub>e</sub> – b<sub>e</sub>S<sub>e</sub><sup>2</sup> + (d<sub>e</sub> – L<sub>e</sub>) + K<sub>e</sub>
 dS<sub>e</sub>/dt = R<sub>e</sub> – a<sub>e</sub>S<sub>e</sub> + C<sub>me</sub>S<sub>m</sub> + C<sub>FEOe</sub>S<sub>FEO</sub>
 
-Equações do oscilador morning (m)
+Morning oscilador (m)
 
-dRm/dt = Rm – cmSm – bmSm2 + (dm – Lm) + Km
-dSm/dt = Rm – amSm + CemSe + CFEOmSFEO
+dR<sub>m</sub>/dt = R<sub>m</sub> – c<sub>m</sub>S<sub>m</sub> – b<sub>m</sub>S<sub>m</sub><sup>2</sup> + (d<sub>m</sub> – L<sub>m</sub>) + K<sub>m</sub>
+dS<sub>m</sub>/dt = R<sub>m</sub> – a<sub>m</sub>S<sub>m</sub> + C<sub>em</sub>S<sub>e</sub> + C<sub>FEOm</sub>S<sub>FEO</sub>
 
-Equações do Food-entrainable oscillator (FEO)
+Food-entrainable oscillator (FEO)
 
-dRFEO/dt = RFEO – cFEOSFEO – bFEOSFEO2 + (dFEO – Food) + KFEO
-dSFEO/dt = RFEO – aFEOSFEO + CeFEOSe + CmFEOSm (6)
+dR<sub>FEO</sub>/dt = R<sub>FEO</sub> – c<sub>FEO</sub>S<sub>FEO</sub> – b<sub>FEO</sub>S<sub>FEO</sub><sup>2</sup> + (d<sub>FEO</sub> – Food) + K<sub>FEO</sub>
+dS<sub>FEO</sub>/dt = R<sub>FEO</sub> – a<sub>FEO</sub>S<sub>FEO</sub> + C<sub>eFEO</sub>S<sub>e</sub> + C<sub>mFEO</sub>S<sub>m</sub>
 
-Test
-h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
 
-State variables R and S together describe the state of one oscillator at a given time point. The R variable is prevented from reaching negative values. Parameters a, b, c, and d are set to fixed values and collectively define an oscillator configuration, with intrinsic period and amplitude. K (Kyner) is a small nonlinear term that guarantees numerical smoothness (K = k1/(1 + k2R2), k1 = 1, k2 = 100; Oda et al., 2000). The L term simulates the light input (forcing variable). Its value is maintained at zero to simulate the dark hours. When lights are turned on, it is changed to a positive amplitude value in arbitrary units (a.u.), which simulates the light intensity. In one particular case indicated below, we used pulses of negative amplitude. The coupling term C controls the strength with which the E oscillator influences the morning oscillator (CEM) and vice versa (CME). When coupling is symmetric, CEM = CME.
+State variables *R* and *S* together describe the phase of each oscillator at a given time point. The *R* variable is prevented from reaching negative values. Parameters *a*, *b*, *c*, and *d* are set to fixed values and collectively define an oscillator configuration, with intrinsic period and amplitude. *K* (Kyner) is a small nonlinear term that guarantees numerical smoothness (*K* = *k*<sub>1</sub>/(1 + *k*<sub>2</sub>*R*<sup>2</sup>), *k*<sub>1</sub> = 1, *k*<sub>2</sub> = 100; Oda et al., 2000). The *L* and *Food* terms simulate the light and food inputs (forcing variables). Their values are maintained at zero to simulate no stimulus: dark in case of *L* and constant food availability for *Food*. When lights are turned on, *L* is changed to a positive amplitude value in arbitrary units (a.u.), which simulates the light intensity. The coupling term *C* controls the strength with which one oscillator acts on the other. In each *C* term, the subscribed letters indicate the direction of the coupling, for instance, *C*<sub>eFEO</sub> is the coupling from the evening oscillator to FEO.
 
 
 ## References
