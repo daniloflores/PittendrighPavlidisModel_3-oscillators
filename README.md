@@ -8,21 +8,24 @@ The present code adapts the Java implementation into the programming language R 
 ## Model equations
 Evening oscilador (e)
 
-dR<sub>e</sub>/dt = R<sub>e</sub> – c<sub>e</sub>S<sub>e</sub> – b<sub>e</sub>S<sub>e</sub><sup>2</sup> + (d<sub>e</sub> – L<sub>e</sub>) + K<sub>e</sub>
-dS<sub>e</sub>/dt = R<sub>e</sub> – a<sub>e</sub>S<sub>e</sub> + C<sub>me</sub>S<sub>m</sub> + C<sub>FEOe</sub>S<sub>FEO</sub>
+d*R*<sub>e</sub>/dt = *R*<sub>e</sub> – *c*<sub>e</sub>*S*<sub>e</sub> – *b*<sub>e</sub>*S*<sub>e</sub><sup>2</sup> + (*d*<sub>e</sub> – *L*<sub>e</sub>) + *K*<sub>e</sub>
+
+d*S*<sub>e</sub>/dt = *R*<sub>e</sub> – *a*<sub>e</sub>*S*<sub>e</sub> + *C*<sub>me</sub>*S*<sub>m</sub> + *C*<sub>FEOe</sub>*S*<sub>FEO</sub>
 
 Morning oscilador (m)
 
-dR<sub>m</sub>/dt = R<sub>m</sub> – c<sub>m</sub>S<sub>m</sub> – b<sub>m</sub>S<sub>m</sub><sup>2</sup> + (d<sub>m</sub> – L<sub>m</sub>) + K<sub>m</sub>
-dS<sub>m</sub>/dt = R<sub>m</sub> – a<sub>m</sub>S<sub>m</sub> + C<sub>em</sub>S<sub>e</sub> + C<sub>FEOm</sub>S<sub>FEO</sub>
+d*R*<sub>m</sub>/dt = *R*<sub>m</sub> – *c*<sub>m</sub>*S*<sub>m</sub> – *b*<sub>m</sub>*S*<sub>m</sub><sup>2</sup> + (*d*<sub>m</sub> – *L*<sub>m</sub>) + *K*<sub>m</sub>
+
+d*S*<sub>m</sub>/dt = *R*<sub>m</sub> – *a*<sub>m</sub>*S*<sub>m</sub> + *C*<sub>em</sub>*S*<sub>e</sub> + *C*<sub>FEOm</sub>*S*<sub>FEO</sub>
 
 Food-entrainable oscillator (FEO)
 
-dR<sub>FEO</sub>/dt = R<sub>FEO</sub> – c<sub>FEO</sub>S<sub>FEO</sub> – b<sub>FEO</sub>S<sub>FEO</sub><sup>2</sup> + (d<sub>FEO</sub> – Food) + K<sub>FEO</sub>
-dS<sub>FEO</sub>/dt = R<sub>FEO</sub> – a<sub>FEO</sub>S<sub>FEO</sub> + C<sub>eFEO</sub>S<sub>e</sub> + C<sub>mFEO</sub>S<sub>m</sub>
+d*R*<sub>FEO</sub>/dt = *R*<sub>FEO</sub> – *c*<sub>FEO</sub>*S*<sub>FEO</sub> – *b*<sub>FEO</sub>*S*<sub>FEO</sub><sup>2</sup> + (*d*<sub>FEO</sub> – *Food*) + *K*<sub>FEO</sub>
+
+d*S*<sub>FEO</sub>/dt = *R*<sub>FEO</sub> – *a*<sub>FEO</sub>*S*<sub>FEO</sub> + *C*<sub>eFEO</sub>*S*<sub>e</sub> + *C*<sub>mFEO</sub>*S*<sub>m</sub>
 
 
-State variables *R* and *S* together describe the phase of each oscillator at a given time point. The *R* variable is prevented from reaching negative values. Parameters *a*, *b*, *c*, and *d* are set to fixed values and collectively define an oscillator configuration, with intrinsic period and amplitude. *K* (Kyner) is a small nonlinear term that guarantees numerical smoothness (*K* = *k*<sub>1</sub>/(1 + *k*<sub>2</sub>*R*<sup>2</sup>), *k*<sub>1</sub> = 1, *k*<sub>2</sub> = 100; Oda et al., 2000). The *L* and *Food* terms simulate the light and food inputs (forcing variables). Their values are maintained at zero to simulate no stimulus: dark in case of *L* and constant food availability for *Food*. When lights are turned on, *L* is changed to a positive amplitude value in arbitrary units (a.u.), which simulates the light intensity. The coupling term *C* controls the strength with which one oscillator acts on the other. In each *C* term, the subscribed letters indicate the direction of the coupling, for instance, *C*<sub>eFEO</sub> is the coupling from the evening oscillator to FEO.
+State variables ***R*** and ***S*** together describe the phase of each oscillator at a given time point. The *R* variable is prevented from reaching negative values. Parameters ***a***, ***b***, ***c***, and ***d*** are set to fixed values and collectively define an oscillator configuration, with intrinsic period and amplitude. ***K*** (Kyner) is a small nonlinear term that guarantees numerical smoothness (*K* = *k*<sub>1</sub>/(1 + *k*<sub>2</sub>*R*<sup>2</sup>), *k*<sub>1</sub> = 1, *k*<sub>2</sub> = 100; Oda et al., 2000). The ***L*** and ***Food*** terms simulate the light and food inputs (forcing variables). Their values are maintained at zero to simulate no stimulus: dark in case of *L* and constant food availability for *Food*. When lights are turned on, *L* is changed to a positive amplitude value in arbitrary units (a.u.), which simulates the light intensity. The coupling term ***C*** controls the strength with which one oscillator acts on the other. In each *C* term, the subscribed letters indicate the direction of the coupling, for instance, *C*<sub>eFEO</sub> is the coupling from the evening oscillator to FEO.
 
 
 ## References
