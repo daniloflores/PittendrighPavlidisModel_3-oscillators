@@ -1,4 +1,4 @@
-#### --- Pavlidis-Pittendrigh Model with the Euler Method --- ####
+#### --- Pavlidis-Pittendrigh Model simulated with the Euler integration method --- ####
 #### --- Executable --- ####
 
 #Date: 2021 September 24
