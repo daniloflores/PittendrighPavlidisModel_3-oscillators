@@ -1,3 +1,5 @@
+# PittendrighPavlidisModel_3-oscillators
+
 This repository contains an implemention of the Pittendrigh-Pavlidis model of 3 coupled oscillators.
 
 ## Introduction
