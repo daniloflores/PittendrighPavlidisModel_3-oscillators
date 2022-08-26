@@ -3,8 +3,10 @@
 This repository contains an implemention of the Pittendrigh-Pavlidis model of 3 coupled oscillators.
 
 ## Introduction
-The Pittendrigh-Pavlidis equations have been originally used to model biological rhythms in the fruit fly *Drosophila* (Pittendrigh, 1981; Pittendrigh et al., 1991), with two limit-cycle oscillators in a master-slave configuration.
-The equations were later adpated to model the evening-morning oscillators that control biological rhythms in rodents (Oda et al., 2000; Flôres and Oda, 2020). In this case, the two limit-cycle oscillators were mutually coupled. This implementation was made in Java, within the CircadianDynamix extension of the Neurodynamix II software (Friensen and Friense, 2010).
+The Pittendrigh-Pavlidis equations were originally used to model biological rhythms in the fruit fly *Drosophila* (Pittendrigh, 1981; Pittendrigh et al., 1991), with two limit-cycle oscillators in a master-slave configuration.
+
+The equations were later adpated to model the evening-morning oscillators that control biological rhythms in rodents (Oda et al., 2000; Flôres and Oda, 2020). In this case, the two limit-cycle oscillators were mutually coupled. This second implementation was made in Java, within the CircadianDynamix extension of the Neurodynamix II software (Friensen and Friense, 2010).
+
 In the present code, the Java implementation is adapted to the programming language R. And a third oscillator is added to the model, to simulate the interaction between evening-morning oscillators and the Food-Entrainable Oscillator (FEO) in rodents.
 
 ## Model equations
