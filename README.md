@@ -1,6 +1,6 @@
 # PittendrighPavlidisModel_3-oscillators
 
-This repository contains an implemention of the Pittendrigh-Pavlidis model of 3 coupled oscillators.
+An implemention of the Pittendrigh-Pavlidis model of 3 coupled oscillators.
 
 ## Introduction
 The Pittendrigh-Pavlidis equations were originally used to model biological rhythms in the fruit fly *Drosophila* (Pittendrigh, 1981; Pittendrigh et al., 1991), with two limit-cycle oscillators in a master-slave configuration.
